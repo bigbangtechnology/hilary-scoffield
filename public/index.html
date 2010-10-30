@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hilary Scoffield - Unpredictably Excellent On-Location Photography</title>
+	
+	<link rel="stylesheet" href="/stylesheets/html5reset.css" />
+	<script src="/javascripts/jquery.js"></script>
+
+	
+	<style type="text/css">
+		header {
+			margin:0 auto;
+			margin-bottom:20px;
+			margin-top:20px;
+			
+			min-width:800px;
+			
+			position:relative;
+		}
+		
+		hgroup {
+			margin-left:20px;
+		}
+		
+		header h1 {
+			font-size:2em;
+		}
+		
+		header h2 {
+			font-size:1.0em;
+		}
+		
+		#primary-cta {
+			position:absolute;
+			right:20px;
+			top:0;
+			
+			padding:10px;
+			
+			border:solid 1px black;
+		}
+		
+		/* FLOAT CLEARING */
+		header:after, .section-content:after {
+			content:".";
+			visibility:hidden;
+			height:0;
+			clear:left;
+			display:block;
+		}
+		
+		.section-content {
+			min-width:800px;
+			margin:0 auto;
+			
+			position:relative;			
+		}
+		
+		.secondary-column {
+			position:absolute;
+			left:20px;
+			width:200px;
+			
+			margin-top:20px;
+		}		
+		
+		dl {
+			margin-bottom:20px;
+		}
+		
+		dt {
+			font-weight:bold;
+			margin-bottom:10px;
+			font-size:18px;
+		}
+		
+		dd {
+			font-size:14px;
+			line-height:18px;
+		}
+		
+		.primary-column {
+			position:absolute;
+			right:20px;
+			left:240px;
+		}
+		
+		.primary-column p {
+			text-align:right;
+			margin-bottom:10px;
+		}
+		
+		.primary-column img {
+			width:100%;
+			margin:0 auto;
+		}
+
+	</style>
+	
+</head>
+<body>
+	<header>
+		<hgroup>
+			<h1>Hilary Scoffield</h1>
+			<h2>Life's Style Photographer</h2>
+		</hgroup>
+		
+		<div id="primary-cta">
+			<p>Let's Get Started</p>
+			<p><a href="#">photos@hilaryscoffield.com</a></p>
+		</div>
+	</header>
+	
+	<div class="section-content">
+		<section class="secondary-column">		
+			<dl>
+				<dt>Capture The Moment</dt>
+				<dd>Amazing portraits come when you least expect it. Act on impulse & have some fun. You'll never hear me say "say cheese!"</dd>
+			</dl>	
+			
+			<dl>
+				<dt>Individuality</dt>
+				<dd>The shoot is designed just for you so we sit down and talk about it first to guarantee unique & custom photographs.</dd>
+			</dl>
+			
+			<dl>
+				<dt>All Around the Town</dt>
+				<dd>The best photos are in your own environment be it a thirteen year old birthday party or a walk in the park. Pick a place that says something about you.</dd>
+			</dl>
+		</section>
+	
+		<section class="primary-column">
+			<p>
+				<a href="#">&lsaquo; Previous</a> <a href="#">Next &rsaquo;</a>
+			</p>
+			
+			<img src="/images/test.jpg" />
+		</section>
+	</div>
+
+	<footer>
+		<p>&copy;2010 Hilary Scoffield</p>
+	</footer>
+	
+	<script>
+		$(document).ready(function() {
+			calculateContentHeight();
+			
+			$('img').load(function() {
+				calculateContentHeight();
+			});			
+			
+			$(window).resize(function() {
+				calculateContentHeight();
+			});
+		});
+
+		// make the section-content the same height as the primary-column or secondary-column whichever is taller
+		function calculateContentHeight() {
+			var primaryHeight = $('.primary-column').height();
+			var secondaryHeight = $('.secondary-column').height();
+			
+			if (primaryHeight > secondaryHeight) {
+				$('.section-content').height(primaryHeight);
+			} else {
+				$('.section-content').height(secondaryHeight);
+			}
+		}
+	</script>
+</body>
+</html>
