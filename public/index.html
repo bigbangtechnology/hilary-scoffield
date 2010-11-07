@@ -4,178 +4,15 @@
 	<title>Hilary Scoffield - Life's Style Photographer</title>
 	
 	<link rel="stylesheet" href="/stylesheets/html5reset.css" />
+	<link rel="stylesheet" href="/stylesheets/screen.css" />
+	
 	<script src="/javascripts/jquery.js"></script>
+	<script src="/javascripts/application.js"></script>
 
-	
-	<style type="text/css">
-		body {
-			background-color:#fffae3;
-		}
-		
-		header {
-			margin:0 auto;
-			margin-top:20px;
-			
-			min-width:800px;
-			
-			position:relative;
-		}
-		
-		hgroup {
-			background-color:#FFFDF9;
-
-			margin-left:20px;
-			margin-right:20px;
-			padding-bottom:20px;
-			
-			padding-left:20px;
-			padding-top:20px;
-		}
-		
-		header h1 {
-			font-size:2em;
-			margin-bottom:5px;
-			color:#3D2641;
-		}
-		
-		header h2 {
-			font-size:1.5em;
-			color:#817783;
-
-		}
-		
-		#primary-cta {
-			position:absolute;
-			right:20px;
-			top:0;
-			
-			padding:10px;
-			padding-right:20px;
-
-			background-color:#3D2641;
-			
-			border-bottom:solid 1px #27002e;
-			border-right:solid 1px #27002e;
-			
-			border-top:solid 1px #817783;
-			border-left:solid 1px #817783;
-		}
-		
-		#primary-cta .tk-myriad-pro {
-			color:#D3AADA;
-		}
-		
-		#primary-cta .tk-museo {
-			font-size:0.8em;
-			margin-top:10px;
-			margin-bottom:5px;
-		}
-		
-		#primary-cta a:link, #primary-cta a:visited {
-			text-decoration:none;
-			color:#ffffff;
-			padding-bottom:2px;			
-			border-bottom:solid 1px #3d2641;
-		}
-		
-		#primary-cta a:hover {
-			border-bottom:solid 1px #ffffff;
-
-		}
-		
-		/* FLOAT CLEARING */
-		header:after, .section-content:after {
-			content:".";
-			visibility:hidden;
-			height:0;
-			clear:left;
-			display:block;
-		}
-		
-		.section-content {
-			min-width:800px;
-			margin-left:20px;
-			margin-right:20px;
-			
-			position:relative;	
-			background-color:#FFFDF9;
-			
-		}
-		
-		.secondary-column {
-			position:absolute;
-			left:20px;
-			width:200px;
-			
-			margin-top:20px;
-			
-		}		
-		
-		dl {
-			margin-bottom:20px;
-		}
-		
-		dt {
-			font-weight:bold;
-			margin-bottom:5px;
-			font-size:18px;
-			color:#3D2641;
-		}
-		
-		dd {
-			font-size:13px;
-			line-height:20px;
-			color:#817783;
-		}
-		
-		.primary-column {
-			position:absolute;
-			right:20px;
-			left:240px;
-		}
-		
-		.primary-column a:link, .primary-column a:visited {
-			color:#3D2641;
-			font-size:18px;
-			text-decoration:none;
-		}
-		
-		.primary-column a:hover {
-			text-decoration:underline;
-		}
-		
-		.primary-column a+a {
-			border-left:solid 1px #817783;
-			padding-left:7px;
-			margin-left:5px;
-		}
-		
-		.primary-column p {
-			text-align:right;
-			margin-bottom:10px;
-		}
-		
-		.primary-column img {
-			width:100%;
-			margin:0 auto;
-		}
-		
-		footer {		
-			margin:20px;
-			margin-top:0;
-			padding:20px;
-			color:#555555;
-			background-color:#FFFDF9;
-		}
-		
-			footer p {
-				text-align:right;
-			}
-		
-	</style>
-	
-	<script type="text/javascript" src="http://use.typekit.com/ejd8trg.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!-- 
+		<script type="text/javascript" src="http://use.typekit.com/ejd8trg.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	-->
 </head>
 <body>
 	<header>
@@ -210,10 +47,11 @@
 	
 		<section class="primary-column">
 			<p class="tk-myriad-pro">
-				<a href="#">&lsaquo; Previous</a> <a href="#">Next &rsaquo;</a>
+				<a href="#prev">&lsaquo; Previous</a> <a href="#next">Next &rsaquo;</a>
 			</p>
 			
-			<img src="/images/test.jpg" />
+			<img src="/images/test_2.jpg" class="portrait" />
+			<img src="/images/test.jpg" class="landscape" />
 		</section>
 	</div>
 
@@ -222,29 +60,7 @@
 	</footer>
 	
 	<script>
-		$(document).ready(function() {
-			calculateContentHeight();
-			
-			$('img').load(function() {
-				calculateContentHeight();
-			});			
-			
-			$(window).resize(function() {
-				calculateContentHeight();
-			});
-		});
-
-		// make the section-content the same height as the primary-column or secondary-column whichever is taller
-		function calculateContentHeight() {
-			var primaryHeight = $('.primary-column').height();
-			var secondaryHeight = $('.secondary-column').height();
-			
-			if (primaryHeight > secondaryHeight) {
-				$('.section-content').height(primaryHeight);
-			} else {
-				$('.section-content').height(secondaryHeight);
-			}
-		}
+		jQuery.preLoadImages("/images/test.jpg", "/images/test_2.jpg");
 	</script>
 </body>
 </html>
