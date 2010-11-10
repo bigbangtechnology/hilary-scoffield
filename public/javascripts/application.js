@@ -1,8 +1,8 @@
 var currentImage;
 var slidesShowInterval;
 
-const SLIDESHOW_INTERVAL = 8000;
-const SLIDESHOW_FADE_DURATION = 1500;
+var SLIDESHOW_INTERVAL = 8000;
+var SLIDESHOW_FADE_DURATION = 1500;
 
 $(document).ready(function() {
 	calculateContentHeight();
