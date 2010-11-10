@@ -1,6 +1,7 @@
 body 
 { 
-	background-color: #fffae3; 
+	background-color: #fff6ba; 
+	border-top:solid 5px #b2a75e;
 }
 
 header
@@ -14,6 +15,7 @@ header
 hgroup
 {
 	background-color: #FFFDF9;
+	border-top:solid 5px #d7d5d2;
 	margin-left: 20px;
 	margin-right: 20px;
 	padding-bottom: 20px;
@@ -40,12 +42,10 @@ header h2
 	right: 20px;
 	top: 0;
 	padding: 10px;
-	padding-right: 20px;
+	padding-right: 18px;
 	background-color: #3D2641;
-	border-bottom: solid 1px #27002e;
-	border-right: solid 1px #27002e;
-	border-top: solid 1px #817783;
-	border-left: solid 1px #817783;
+	border-top:solid 2px #1f1321;
+	border-right:solid 2px #1f1321;
 }
 
 #primary-cta .tk-myriad-pro 
