@@ -9,10 +9,8 @@
 	<script src="/javascripts/jquery.js"></script>
 	<script src="/javascripts/application.js"></script>
 
-	<!-- 
-		<script type="text/javascript" src="http://use.typekit.com/ejd8trg.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	-->
+	<script type="text/javascript" src="http://use.typekit.com/ejd8trg.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
 	<header>
@@ -31,17 +29,20 @@
 		<section class="secondary-column">		
 			<dl>
 				<dt class="tk-myriad-pro">Capture The Moment</dt>
-				<dd class="tk-museo">Amazing portraits come when you least expect it. Act on impulse & have some fun. You'll never hear me say "say cheese!"</dd>
+				<dd class="tk-museo">Amazing portraits come when you least expect it. Act on impulse &amp; 
+					have some fun. You'll never hear me say "say cheese!"</dd>
 			</dl>	
 			
 			<dl>
 				<dt class="tk-myriad-pro">Individuality</dt>
-				<dd class="tk-museo">The shoot is designed just for you so we sit down and talk about it first to guarantee unique & custom photographs.</dd>
+				<dd class="tk-museo">The shoot is designed just for you so we sit down and talk about it 
+					first to guarantee unique &amp; custom photographs.</dd>
 			</dl>
 			
 			<dl>
 				<dt class="tk-myriad-pro">All Around the Town</dt>
-				<dd class="tk-museo">The best photos are in your own environment be it a thirteen year old birthday party or a walk in the park. Pick a place that says something about you.</dd>
+				<dd class="tk-museo">The best photos are in your own environment be it a thirteen year old
+					 birthday party or a walk in the park. Pick a place that says something about you.</dd>
 			</dl>
 		</section>
 	
@@ -59,8 +60,11 @@
 		<p class="tk-myriad-pro">&copy;2010, Hilary Scoffield</p>
 	</footer>
 	
-	<script>
-		jQuery.preLoadImages("/images/test.jpg", "/images/test_2.jpg");
+	<script>		
+		// preload all the images on the page
+		jQuery.preLoadImages.call(jQuery.map($('img'), function(img) {
+			return $(img).attr('src');
+		}));
 	</script>
 </body>
 </html>
