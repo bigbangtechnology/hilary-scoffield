@@ -1,26 +1,27 @@
 body 
 { 
-	background-color: #fff6ba; 
-	border-top:solid 5px #b2a75e;
+/*  background-color: #fff6ba; */
+  background-color:#817783;
 }
 
 header
 {
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 10px;
 	min-width: 800px;
 	position: relative;
 }
 
 hgroup
 {
-	background-color: #FFFDF9;
-	border-top:solid 5px #d7d5d2;
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-bottom: 20px;
+  background-color: #FFFDF9;
+	border-top:solid 3px #d7d5d2;
+	margin-left: 10px;
+	margin-right: 10px;
 	padding-left: 20px;
 	padding-top: 20px;
+  position:relative;
+	z-index:2;
 }
 
 header h1
@@ -39,13 +40,13 @@ header h2
 #primary-cta
 {
 	position: absolute;
-	right: 20px;
+	z-index:3;
+	right: 10px;
 	top: 0;
 	padding: 10px;
-	padding-right: 18px;
+	padding-right: 20px;
 	background-color: #3D2641;
-	border-top:solid 2px #1f1321;
-	border-right:solid 2px #1f1321;
+
 }
 
 #primary-cta .tk-myriad-pro 
@@ -89,18 +90,20 @@ header:after, .section-content:after
 .section-content
 {
 	min-width: 800px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 	position: relative;
-	background-color: #FFFDF9;
+	z-index:;
+	margin-top:-10px;
+  background-color: #FFFDF9;
 }
 
 .secondary-column
 {
 	position: absolute;
 	left: 20px;
-	width: 200px;
-	margin-top: 20px;
+	width: 251px;
+	margin-top: 40px;
 }
 
 dl 
@@ -127,7 +130,7 @@ dd
 {
 	position: absolute;
 	right: 20px;
-	left: 240px;
+	left: 290px;
 }
 
 .primary-column a:link, .primary-column a:visited
@@ -144,6 +147,8 @@ dd
 {
 	text-align: right;
 	margin-bottom: 10px;
+	position:relative;
+	z-index:4;
 }
 
 .primary-column img
@@ -161,11 +166,11 @@ img.portrait
 
 footer
 {
-	margin: 20px;
+	margin: 10px;
 	margin-top: 0;
 	padding: 20px;
 	color: #555555;
-	background-color: #FFFDF9;
+	background-color: #d7d5d2;
 }
 
 footer p { text-align: right; }

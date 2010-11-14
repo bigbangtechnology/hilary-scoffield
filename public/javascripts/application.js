@@ -4,6 +4,11 @@ var slidesShowInterval;
 var SLIDESHOW_INTERVAL = 8000;
 var SLIDESHOW_FADE_DURATION = 1500;
 
+var keyPressIgnore = false;
+var SLIDESHOW_MAXIMUM_KEYPRESS_TIME = 750;
+
+var FOOTER_MARGIN = 20;
+
 $(document).ready(function() {
 	calculateContentHeight();
 	
@@ -15,18 +20,39 @@ $(document).ready(function() {
 		calculateContentHeight();
 	});
 	
+	$(document).keydown(function(event) {
+	  if (keyPressIgnore)
+	    return false;
+	    
+	  if (event.keyCode == 39) {
+      moveSlideShow('next');
+	   	ignoreKeyPresses();
+	  } else if (event.keyCode == 37) {
+	    moveSlideShow('prev');
+	    ignoreKeyPresses();
+	  }
+	});
+	
 	initSlideShow();
 	
 	$('a[href=#next]').click(slideShowClickListener);			
 	$('a[href=#prev]').click(slideShowClickListener);
 	
-	startSlideShow();
+  // startSlideShow();
 });
+
+function ignoreKeyPresses() {
+  keyPressIgnore = true;
+  
+  setTimeout(function() {
+    keyPressIgnore = false;
+  }, SLIDESHOW_MAXIMUM_KEYPRESS_TIME);  
+}
 
 // make the section-content the same height as the primary-column or secondary-column whichever is taller
 function calculateContentHeight() {
-	var primaryHeight = $('.primary-column').height();
-	var secondaryHeight = $('.secondary-column').height();
+	var primaryHeight = $('.primary-column').height() + FOOTER_MARGIN;
+	var secondaryHeight = $('.secondary-column').height() + FOOTER_MARGIN;
 	
 	if (primaryHeight > secondaryHeight) {
 		$('.section-content').height(primaryHeight);
@@ -38,7 +64,7 @@ function calculateContentHeight() {
 function slideShowClickListener() {
 		moveSlideShow(getDirection(this.href));
 		
-		resetSlideShow();
+    // resetSlideShow();
 		return false;
 }
 
@@ -61,7 +87,7 @@ function resetSlideShow() {
 	
 	clearInterval(slidesShowInterval);
 	
-	startSlideShow();
+  startSlideShow();
 }
 
 function moveSlideShow(direction) {
