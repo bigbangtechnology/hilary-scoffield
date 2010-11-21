@@ -38,7 +38,16 @@ $(document).ready(function() {
 	$('a[href=#next]').click(slideShowClickListener);			
 	$('a[href=#prev]').click(slideShowClickListener);
 	
-  // startSlideShow();
+	
+	$('#primary-goal').click(function(event) {
+    if (window["pageTracker"] != null) {
+      pageTracker._trackPageview("/contacted");
+    }
+    
+    window.location.replace($(this).attr('href'));
+    
+	  return false;
+	});
 });
 
 function ignoreKeyPresses() {
